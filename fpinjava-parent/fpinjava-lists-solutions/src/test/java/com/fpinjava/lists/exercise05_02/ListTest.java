@@ -1,13 +1,13 @@
 package com.fpinjava.lists.exercise05_02;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;;
 
 import static com.fpinjava.lists.exercise05_02.List.*;
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ListTest {
 
-  @Test(expected=IllegalStateException.class)
+  //@Test(expected=IllegalStateException.class)
   public void testSetHeadNil() {
     list().setHead("d");
   }

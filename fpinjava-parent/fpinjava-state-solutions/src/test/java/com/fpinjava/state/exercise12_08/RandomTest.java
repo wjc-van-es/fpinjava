@@ -1,9 +1,9 @@
 package com.fpinjava.state.exercise12_08;
 
 import com.fpinjava.common.Tuple;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 public class RandomTest {

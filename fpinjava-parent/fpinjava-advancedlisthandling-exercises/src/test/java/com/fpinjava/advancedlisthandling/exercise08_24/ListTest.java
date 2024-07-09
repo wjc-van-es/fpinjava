@@ -2,13 +2,13 @@ package com.fpinjava.advancedlisthandling.exercise08_24;
 
 import com.fpinjava.common.Function;
 import com.fpinjava.common.Result;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;;
 
 import java.math.BigInteger;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 public class ListTest {

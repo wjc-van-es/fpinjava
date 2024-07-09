@@ -2,9 +2,9 @@ package com.fpinjava.lists.exercise05_08;
 
 import static com.fpinjava.lists.exercise05_06.List.list;
 import static com.fpinjava.lists.exercise05_08.Product.product;
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;;
 
 public class ProductTest {
 

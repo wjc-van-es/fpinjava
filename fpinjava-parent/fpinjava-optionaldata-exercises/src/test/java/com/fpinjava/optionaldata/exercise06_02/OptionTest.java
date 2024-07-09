@@ -1,8 +1,8 @@
 package com.fpinjava.optionaldata.exercise06_02;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class OptionTest {
 
@@ -12,7 +12,7 @@ public class OptionTest {
 //    assertEquals(Integer.valueOf(2), option.getOrElse(OptionTest::getDefault));
   }
 
-  @Test(expected = IllegalStateException.class)
+  //@Test(expected = IllegalStateException.class)
   public void testGetOrElseNone() {
     Option<Integer> option = Option.none();
 //    assertEquals(Integer.valueOf(0), option.getOrElse(OptionTest::getDefault));

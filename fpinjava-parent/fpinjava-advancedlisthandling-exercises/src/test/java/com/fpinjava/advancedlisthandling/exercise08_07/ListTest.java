@@ -1,10 +1,10 @@
 package com.fpinjava.advancedlisthandling.exercise08_07;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 import com.fpinjava.common.Function;
 import com.fpinjava.common.Result;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;;
 
 public class ListTest {
 

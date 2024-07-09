@@ -3,9 +3,9 @@ package com.fpinjava.functions.exercise02_01;
 import static com.fpinjava.functions.exercise02_01.FunctionExamples.compose;
 import static com.fpinjava.functions.exercise02_01.FunctionExamples.triple;
 import static com.fpinjava.functions.exercise02_01.FunctionExamples.square;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;;
 
 public class FunctionExamplesTest {
 

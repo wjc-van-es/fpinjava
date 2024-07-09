@@ -2,9 +2,9 @@ package com.fpinjava.advancedtrees.exercise11_03;
 
 import com.fpinjava.common.List;
 import com.fpinjava.common.Result;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 public class MapTest {

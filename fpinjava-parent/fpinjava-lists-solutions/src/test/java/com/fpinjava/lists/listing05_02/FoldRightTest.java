@@ -3,9 +3,9 @@ package com.fpinjava.lists.listing05_02;
 import static com.fpinjava.lists.exercise05_06.List.list;
 import static com.fpinjava.lists.listing05_02.FoldRight.sum;
 import static com.fpinjava.lists.listing05_02.FoldRight.product;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;;
 
 public class FoldRightTest {
 

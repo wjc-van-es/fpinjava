@@ -4,7 +4,7 @@ package com.fpinjava.laziness.exercise09_13;
 import com.fpinjava.common.Function;
 import com.fpinjava.common.List;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class StreamTrace {
 

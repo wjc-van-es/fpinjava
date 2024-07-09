@@ -2,9 +2,9 @@ package com.fpinjava.laziness.exercise09_18;
 
 import com.fpinjava.common.Result;
 import com.fpinjava.common.Tuple;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 public class StreamTest {

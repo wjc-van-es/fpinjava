@@ -2,9 +2,9 @@ package com.fpinjava.lists.exercise05_11;
 
 import static com.fpinjava.lists.exercise05_10.List.list;
 import static com.fpinjava.lists.exercise05_11.SumProductLength.*;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;;
 
 
 public class SumProductLengthTest {

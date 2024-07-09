@@ -1,8 +1,8 @@
 package com.fpinjava.lists.exercise05_13;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;;
 
 import com.fpinjava.common.Function;
 import com.fpinjava.lists.exercise05_10.List;

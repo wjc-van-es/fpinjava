@@ -1,9 +1,9 @@
 package com.fpinjava.handlingerrors.exercise07_13;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 import com.fpinjava.common.Function;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;;
 
 public class ResultTest {
 

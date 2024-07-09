@@ -1,9 +1,9 @@
 package com.fpinjava.makingjavafunctional.exercise03_10;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;;
 
 import static com.fpinjava.makingjavafunctional.exercise03_10.CollectionUtilities.*;
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CollectionUtilitiesTest {
 

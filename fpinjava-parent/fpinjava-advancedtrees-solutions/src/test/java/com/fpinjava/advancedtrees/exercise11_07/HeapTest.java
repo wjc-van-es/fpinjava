@@ -2,8 +2,8 @@ package com.fpinjava.advancedtrees.exercise11_07;
 
 import com.fpinjava.common.List;
 import com.fpinjava.common.Tuple;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;;
 
 
 public class HeapTest {
@@ -13,7 +13,7 @@ public class HeapTest {
     List<Integer> list = List.list(1, 2, 3, 4, 5, 6, 7);
     Heap<Integer> queue = list.foldLeft(Heap.<Integer>empty(), h -> h::add);
 //    List<Tuple<Integer, Integer>> testList = list.zipWithPosition();
-    list.zipWithPositionResult().forEachOrThrow(testList ->List.sequence(testList.map(t -> queue.get(t._2).map(v -> v.equals(t._1)))).map(lst -> lst.forAll(x -> x)).forEachOrThrow(Assert::assertTrue));
+    list.zipWithPositionResult().forEachOrThrow(testList ->List.sequence(testList.map(t -> queue.get(t._2).map(v -> v.equals(t._1)))).map(lst -> lst.forAll(x -> x)).forEachOrThrow(Assertions::assertTrue));
   }
 
   @Test
@@ -21,6 +21,6 @@ public class HeapTest {
     List<Integer> list = List.list(7, 3, 1, 6, 4, 6, 2);
     Heap<Integer> queue = list.foldLeft(Heap.<Integer>empty(), h -> h::add);
 //    List<Tuple<Integer, Integer>> testList = List.list(1, 2, 3, 4, 6, 6, 7).zipWithPosition();
-    List.list(1, 2, 3, 4, 6, 6, 7).zipWithPositionResult().forEachOrThrow(testList -> List.sequence(testList.map(t -> queue.get(t._2).map(v -> v.equals(t._1)))).map(lst -> lst.forAll(x -> x)).forEachOrThrow(Assert::assertTrue));
+    List.list(1, 2, 3, 4, 6, 6, 7).zipWithPositionResult().forEachOrThrow(testList -> List.sequence(testList.map(t -> queue.get(t._2).map(v -> v.equals(t._1)))).map(lst -> lst.forAll(x -> x)).forEachOrThrow(Assertions::assertTrue));
   }
 }

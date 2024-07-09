@@ -4,12 +4,12 @@ import com.fpinjava.common.List;
 import com.fpinjava.common.Result;
 import com.fpinjava.common.Tuple;
 import com.fpinjava.state.SimpleRNG;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;;
 
 import java.util.Comparator;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 public class HeapTest2 {

@@ -2,7 +2,7 @@ package com.fpinjava.advancedtrees.exercise11_02;
 
 
 import com.fpinjava.common.Tuple;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;;
 
 import static com.fpinjava.advancedtrees.exercise11_02.NumbersToEnglish.Locale;
 import static com.fpinjava.advancedtrees.exercise11_02.NumbersToEnglish.convertGB;
@@ -10,7 +10,7 @@ import static com.fpinjava.advancedtrees.exercise11_02.NumbersToEnglish.convertU
 import static com.fpinjava.advancedtrees.exercise11_02.NumbersToEnglish.convertUnder1000;
 import static com.fpinjava.advancedtrees.exercise11_02.NumbersToEnglish.decompose;
 import static com.fpinjava.advancedtrees.exercise11_02.NumbersToEnglish.thousands2String;
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class NumbersToEnglishTest {
 

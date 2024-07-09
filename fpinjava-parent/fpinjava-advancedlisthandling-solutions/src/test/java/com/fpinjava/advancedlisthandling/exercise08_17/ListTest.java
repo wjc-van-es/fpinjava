@@ -1,9 +1,9 @@
 package com.fpinjava.advancedlisthandling.exercise08_17;
 
 import com.fpinjava.common.Map;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 public class ListTest {

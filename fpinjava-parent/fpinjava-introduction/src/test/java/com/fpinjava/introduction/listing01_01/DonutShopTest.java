@@ -1,9 +1,9 @@
 package com.fpinjava.introduction.listing01_01;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 import static com.fpinjava.introduction.listing01_01.DonutShop.buyDonut;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;;
 
 import com.fpinjava.introduction.listing01_01.Donut;
 import com.fpinjava.introduction.listing01_01.CreditCard;

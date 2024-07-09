@@ -1,8 +1,8 @@
 package com.fpinjava.introduction.listing01_06;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;;
 
 import com.fpinjava.common.List;
 import com.fpinjava.common.Map;

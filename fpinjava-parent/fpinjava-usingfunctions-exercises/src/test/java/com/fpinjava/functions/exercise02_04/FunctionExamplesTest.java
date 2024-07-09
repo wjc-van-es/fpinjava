@@ -1,9 +1,9 @@
 package com.fpinjava.functions.exercise02_04;
 
 import static com.fpinjava.functions.exercise02_04.FunctionExamples.f;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;;
 
 public class FunctionExamplesTest {
 

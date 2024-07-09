@@ -3,10 +3,10 @@ package com.fpinjava.laziness.exercise09_07;
 import com.fpinjava.common.Function;
 import com.fpinjava.common.List;
 import com.fpinjava.common.Supplier;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 public class StreamTest {

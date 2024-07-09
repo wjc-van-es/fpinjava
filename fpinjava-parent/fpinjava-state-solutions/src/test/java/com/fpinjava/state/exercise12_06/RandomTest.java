@@ -1,14 +1,14 @@
 package com.fpinjava.state.exercise12_06;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 import com.fpinjava.common.List;
 import com.fpinjava.common.Tuple;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class RandomTest {

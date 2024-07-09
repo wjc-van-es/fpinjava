@@ -1,9 +1,9 @@
 package com.fpinjava.recursion.exercise04_07;
 
 import static com.fpinjava.recursion.exercise04_04.Range.range;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;;
 
 import com.fpinjava.common.CollectionUtilities;
 import com.fpinjava.common.Function;

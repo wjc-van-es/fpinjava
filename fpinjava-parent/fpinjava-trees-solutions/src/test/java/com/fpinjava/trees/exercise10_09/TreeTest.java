@@ -1,9 +1,9 @@
 package com.fpinjava.trees.exercise10_09;
 
 import com.fpinjava.common.Function;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 public class TreeTest {
