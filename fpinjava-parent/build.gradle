@@ -7,6 +7,11 @@ allprojects {
   apply plugin: 'java'
   sourceCompatibility = 11
   targetCompatibility = 11
+
+}
+
+ext {
+  jupiter_version = findProperty('jupiter_version') ?: "5.8.1"
 }
 
 subprojects {
@@ -40,8 +45,7 @@ project(':fpinjava-usingfunctions-exercises') {
 
   dependencies {
     implementation project(':fpinjava-common')
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$jupiter_version"
   }
 }
 
