@@ -37,6 +37,8 @@ src/site/doc/api
 ivy-report.css
 *link to*
 .idea/
+gradle/
+.gradle/
 */build/
 build/
 *DS_Store
