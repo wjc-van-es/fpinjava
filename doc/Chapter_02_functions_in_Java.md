@@ -96,7 +96,7 @@ It is, however, a total function of $ℕ^+$ to ℕ.
   a _higher-order_ function.
 
 #### Partially applied functions
-- e.g. $f(rate, price) = price (1 + rate/100)$ to express the price with the value added tax as rate expressed as a 
+- e.g. $f(rate, price) = price (1 + rate/100)$ to express the price with the value added tax with rate expressed as a 
   percentage.
 - we could express this as a curried function for all products with the same vat of 9%
 - $f(rate) (price), rate = 9%$, which is sometimes called a _partially applied function_
@@ -104,7 +104,157 @@ It is, however, a total function of $ℕ^+$ to ℕ.
   - as there are lots of products each with their own price, but only a limited set of vat rates this partially applied 
     function is convenient. The fixed rate doesn't have to be inputted for every function call, which reduces the chance
     of errors.
-- The other order in which we could express the function would be $g(price, rate)$ leading to $g(price)(rate).
+- The other order in which we could express the function would be $g(price, rate)$ leading to $g(price)(rate)$.
 - The latter curried or partially applied function would not be so practical, but is still a possibility.
 
 ## §2.2 Functions in Java
+In Java everything is defined inside a class, therefore functions have to be implemented as either instance methods or 
+class methods (designated with the `static` keyword). The main difference is, that an instance method is able to access 
+the object's state implicitly, which is less transparent than a class method that is only able to access input through 
+its parameters (and still also class variables, again marked with the `static` keyword).
+
+### §2.2.1 Functional methods
+For a method (of either instance or class variety) to be functional it must meet the following requirements.
+- It must not mutate anything outside the function. No internal mutation may be visible from the outside.
+- It must not mutate its argument.
+- It must not throw errors or exceptions.
+- It must always return a value.
+- It must be consistent: when called with the same argument, it must always return the same result.
+
+In the examples to evaluate look for these indications that violate the rules:
+- access to any variables used as input beside the parameters: these could be altered by other code and thus violate the
+  rule of consistent return values.
+  - immutable variables (constants) which cannot be changed after object instantiation are allowed.
+- any condition that may throw an exception.
+- any modification to the argument that will be visible by the calling code. 
+  - So primitive type arguments that are passed by value may be reassigned within the methods body; this won't be 
+    visible from the outside,
+  - (collections of) objects may not have their state modified as they are passed by reference and this will be visible
+    from outside the method.
+    - e.g. adding elements to, or removing elements from a collection, changing attributes through setter methods
+    - note that reassignment will not change the state of the original objects passed in.
+
+**All instance methods can be replaced with static methods by adding an argument of the type of the enclosing class.**
+```java
+    public static int applyTax3(FunctionalMethods instance, int a){
+        return a / 100 * (100 + instance.taxPercentage);
+    }
+```
+- For the complete example see 
+  - [com.fpinjava.functions.FunctionalMethods](../fpinjava-parent/fpinjava-usingfunctions-exercises/src/main/java/com/fpinjava/functions/FunctionalMethods.java) and
+  - [com.fpinjava.functions.FunctionalMethodsTest](../fpinjava-parent/fpinjava-usingfunctions-exercises/src/test/java/com/fpinjava/functions/FunctionalMethodsTest.java)
+- Instance methods accessing class properties may be considered as having the enclosing class instance as an implicit 
+  parameter. 
+- Methods that don’t access the enclosing class instance may be safely made static. 
+- Methods accessing the enclosing instance may also be made static if their implicit parameter (the enclosing instance)
+  is made explicit.
+
+#### Object notation vs. functional notation
+- instance methods accessing instance variables may be considered as having the enclosing class instance as an implicit
+parameter. 
+- Methods that don’t access the enclosing class instance may be safely made static. 
+- Methods accessing the enclosing instance may also be made static if their implicit parameter (the enclosing instance)
+  is made explicit.
+
+- See [com.fpinjava.introduction.listing01_06.Payment](../fpinjava-parent/fpinjava-introduction/src/main/java/com/fpinjava/introduction/listing01_06/Payment.java)
+  to see both `combine` method varieties implemented.
+- and [com.fpinjava.introduction.listing01_06.PaymentCombineTest](../fpinjava-parent/fpinjava-introduction/src/test/java/com/fpinjava/introduction/listing01_06/PaymentCombineTest.java)
+  to see how both are called.
+- The instance method can be more easily chained to combine many payments, compare
+  ```java
+  Payment newPayment = p0.combine(p1).combine(p2).combine(p3);
+  ```
+  with
+  ```java
+  Payment newPayment = combine(combine(combine(p0, p1), p2), p3);
+  ```
+  
+### §2.2.2 Java functional interfaces and anonymous classes
+Generally, in Java you cannot compose methods at runtime without applying them first, because they are a part of the 
+class in which they were defined. However, there is a way around this.
+You can declare an interface defining a single method. The interface type can be passed into another method as
+argument as an anonymous inner class implementing the method. This trick is already in use with the AWT and Swing GUI 
+with event handler interfaces and with multithreading using the Runnable and Callable interface.
+```java
+public interface Function {
+    int apply(int arg);
+}
+```
+You can implement this function with an anonymous inner class:
+```java
+Function triple = new Function() {
+    @Override
+    public int apply(int arg) {
+        return arg * 3;
+    }
+};
+
+Function square = new Function() {
+  @Override
+  public int apply(int arg) {
+    return arg * arg;
+  }
+};
+```
+
+### §2.2.3 Composing functions
+We are already familiar with composing the application of functions:
+```java
+System.out.println(square.apply(triple.apply(2)));
+```
+
+Composing the functions themselves would involve a binary operation with a tuple of two Function type parameters:
+```java
+Function compose(final Function f1, final Function f2) {
+    return new Function() {
+        @Override
+        public int apply(int arg) {
+            return f1.apply(f2.apply(arg));
+        }
+    };
+}
+
+System.out.println(compose(triple, square).apply(3));
+```
+Now compose is a genuine higher order function returning a new function based on the two functions as arguments.
+
+### §2.2.4
+We can make our function more generally applicable by using parameterized types using generics. This turns the function 
+into a polymorphic one.
+```java
+public interface Function<T, U> {
+    U apply(T arg);
+}
+```
+We can rewrite our triple and square functions as follows:
+```java
+Function<Integer, Integer> triple = new Function<>() {
+    @Override
+    public Integer apply(Integer arg) {
+        return arg * 3;
+    }
+};
+
+Function<Integer, Integer> square = new Function<>() {
+  @Override
+  public Integer apply(Integer arg) {
+    return arg * arg;
+  }
+};
+```
+
+### §2.2.5 Simplifying the code by using lambdas
+Lambdas don’t change the way the Function interface is defined, but they make implementing it much simpler:
+```java
+Function<Integer, Integer> triple = x -> x * 3;
+Function<Integer, Integer> square = x -> x * x;
+```
+Lambdas can dispense with type references, because they implement a method in a functional interface. A functional 
+interface is any interface that declares only one abstract method. Since Java 8, the compiler is therefore able to infer
+the types of the lambda expression from the abstract method declaration. An interface with more than one abstract method
+wouldn't work, because than the compiler wouldn't know which abstract method to use to infer the types from.
+
+See for all details about lambda expressions and method references:
+[https://github.com/wjc-van-es/java-8-func-prog/blob/master/src/main/java/nl/vea/functionalp/examples/m02/lambda-expression-details.md](https://github.com/wjc-van-es/java-8-func-prog/blob/master/src/main/java/nl/vea/functionalp/examples/m02/lambda-expression-details.md)
+
+## §2.3 Advanced function features

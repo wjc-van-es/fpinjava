@@ -9,7 +9,7 @@ public class FunctionExamplesTest {
 
   @Test
   public void test() {
-    assertEquals(Integer.valueOf(81), f.apply(3));
+    assertEquals(Integer.valueOf(144), f.apply(4));
   }
 
 }

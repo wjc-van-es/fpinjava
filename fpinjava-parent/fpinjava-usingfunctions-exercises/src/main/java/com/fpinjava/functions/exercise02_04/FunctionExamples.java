@@ -7,7 +7,8 @@ public class FunctionExamples {
   public static final Function<Integer, Integer> square = x -> x * x;
 
   public static final Function<Function<Integer, Integer>, Function<Function<Integer, Integer>,
-                                        Function<Integer, Integer>>> compose = null; // To be implemented
+                                        Function<Integer, Integer>>> compose =
+          fa1 -> fa2 -> fr -> fa1.apply(fa2.apply(fr));
 
-  public static final Function<Integer, Integer> f = compose.apply(square).apply(triple);
+  public static final Function<Integer, Integer> f = compose.apply(square).apply(triple); //1rst tripled, 2nd squared
 }

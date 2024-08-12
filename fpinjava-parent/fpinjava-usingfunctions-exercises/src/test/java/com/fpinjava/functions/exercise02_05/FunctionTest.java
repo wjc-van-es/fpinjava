@@ -12,6 +12,10 @@ public class FunctionTest {
 
   @Test
   public void test() {
-    assertEquals(Integer.valueOf(36), Function.<Integer, Integer, Integer>higherCompose().apply(square).apply(triple).apply(2));
+    assertEquals(Integer.valueOf(36), Function
+            .<Integer, Integer, Integer>higherCompose()
+            .apply(square)
+            .apply(triple)
+            .apply(2));
   }
 }
