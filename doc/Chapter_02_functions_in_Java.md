@@ -1,7 +1,8 @@
 <style>
 body {
   font-family: "Gentium Basic", Cardo, "Linux Libertine o", "Palatino Linotype", Cambria, serif;
-  font-size: 130% !important;
+  font-size: 100% !important;
+  padding-right: 12%;
 }
 code {
 	padding: 0 .25em;
@@ -55,7 +56,7 @@ img {
 - There may be elements in the codomain with more than one corresponding element in the domain. (Such a function doesn't
   have a reverse function, though).
 - The set of elements of the codomain that have a corresponding element in the
-  domain is called the _image_ of the function.
+  domain is called the _image_ of the function. (a.k.a. _range_ in Dutch _bereik_)
 
 $$
 f(x) = 2 * x ⇔ f^{-1}(x) = x / 2 
