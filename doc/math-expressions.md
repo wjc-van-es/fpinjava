@@ -36,11 +36,18 @@ h1,h2,h3,h4,h5 {
 
 </style>
 
-# Math expressions
+# Mathematics
 
-- Finally there is support for mathmatical expressions displayed in IntelliJ 
+## Markdown mathematical expressions
+
+- Finally, there is support for mathematical expressions displayed in IntelliJ 
   - inline between `$...$` 
   - and multiline block between `$$ ... $$`
   - see
     [https://blog.jetbrains.com/idea/2024/06/intellij-idea-2024-2-eap-3/#markdown](https://blog.jetbrains.com/idea/2024/06/intellij-idea-2024-2-eap-3/#markdown)
-  - 
+  
+## Terms
+
+### English - Dutch dictionary
+- [https://library.fridoverweij.com/dictionary/dictionary_old.html](https://library.fridoverweij.com/dictionary/dictionary_old.html)
+- [https://library.fridoverweij.com/dictionary/dictionary.html](https://library.fridoverweij.com/dictionary/dictionary.html)
